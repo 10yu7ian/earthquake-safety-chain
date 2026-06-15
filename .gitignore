@@ -1,0 +1,32 @@
+# 环境变量（含密钥，不提交）
+.env
+.env.local
+.env.*.local
+
+# 数据库文件
+*.db
+*.sqlite
+*.sqlite3
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+*.pyo
+
+# 日志
+*.log
+logs/
+
+# 前端构建产物
+dist/
+node_modules/
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 系统文件
+.DS_Store
+Thumbs.db

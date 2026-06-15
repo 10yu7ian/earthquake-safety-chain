@@ -1,0 +1,144 @@
+:root {
+  --bg-base: #0b0b0c;
+  --bg-elevated: #111114;
+  --bg-gradient:
+    radial-gradient(1200px 600px at 10% -10%, rgba(0, 209, 255, 0.12), transparent 60%),
+    radial-gradient(900px 520px at 110% 110%, rgba(168, 85, 247, 0.14), transparent 55%),
+    radial-gradient(circle at 50% 0%, #111114 0%, #0b0b0c 55%, #050507 100%);
+
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-bg-strong: rgba(255, 255, 255, 0.06);
+  --glass-bg-soft: rgba(255, 255, 255, 0.025);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+  --glass-border-strong: 1px solid rgba(255, 255, 255, 0.14);
+  --glass-radius: 18px;
+  --glass-blur: blur(16px);
+  --glass-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  --glass-glow-cyan: 0 0 0 1px rgba(0, 209, 255, 0.35), 0 0 24px rgba(0, 209, 255, 0.25);
+  --glass-glow-violet: 0 0 0 1px rgba(168, 85, 247, 0.35), 0 0 24px rgba(168, 85, 247, 0.25);
+
+  --text-primary: #f1f5f9;
+  --text-secondary: #a8b0bd;
+  --text-muted: #6b7280;
+
+  --color-cyan: #00d1ff;
+  --color-cyan-soft: #38e7ff;
+  --color-violet: #a855f7;
+  --color-violet-soft: #c084fc;
+  --color-success: #22d3a5;
+  --color-warning: #f5a524;
+  --color-danger: #ff5470;
+
+  --neon-text-cyan: 0 0 6px rgba(0, 209, 255, 0.45), 0 0 18px rgba(0, 209, 255, 0.35);
+  --neon-text-violet: 0 0 6px rgba(168, 85, 247, 0.45), 0 0 18px rgba(168, 85, 247, 0.3);
+  --neon-text-danger: 0 0 6px rgba(255, 84, 112, 0.45), 0 0 18px rgba(255, 84, 112, 0.3);
+
+  --font-family-base: "Inter", "PingFang SC", "HarmonyOS Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-family-mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+  background: var(--bg-base);
+}
+
+body {
+  position: relative;
+  color: var(--text-primary);
+  font-family: var(--font-family-base);
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+  overflow-x: hidden;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.35;
+}
+
+body::before {
+  top: -180px;
+  left: -160px;
+  background: radial-gradient(circle, rgba(0, 209, 255, 0.45), transparent 70%);
+}
+
+body::after {
+  right: -200px;
+  bottom: -220px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.4), transparent 70%);
+}
+
+::selection {
+  background: rgba(0, 209, 255, 0.35);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 209, 255, 0.35);
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  border: var(--glass-border);
+  border-radius: var(--glass-radius);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow);
+}
+
+.neon-cyan {
+  color: var(--color-cyan);
+  text-shadow: var(--neon-text-cyan);
+}
+
+.neon-violet {
+  color: var(--color-violet);
+  text-shadow: var(--neon-text-violet);
+}
+
+.neon-danger {
+  color: var(--color-danger);
+  text-shadow: var(--neon-text-danger);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #00d1ff 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-mono {
+  font-family: var(--font-family-mono);
+  letter-spacing: 0.02em;
+}

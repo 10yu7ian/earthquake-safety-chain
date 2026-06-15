@@ -1,0 +1,10 @@
+fastapi
+pydantic-settings
+uvicorn
+sqlalchemy
+python-jose
+passlib
+python-multipart
+paho-mqtt
+requests
+python-dotenv
