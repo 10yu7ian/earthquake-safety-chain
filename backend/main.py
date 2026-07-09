@@ -61,25 +61,22 @@ def on_startup():
 
     db = SessionLocal()
     try:
-        admin_pw = os.getenv("ADMIN_PASSWORD", "")
-        user_pw = os.getenv("USER_PASSWORD", "")
-        if not admin_pw or not user_pw:
-            print("警告: 环境变量 ADMIN_PASSWORD / USER_PASSWORD 未设置，跳过默认用户初始化")
-        else:
-            if not crud.get_user_by_username(db, "admin"):
-                crud.create_user(
-                    db=db,
-                    username="admin",
-                    password_hash=get_password_hash(admin_pw),
-                    role="admin",
-                )
-            if not crud.get_user_by_username(db, "user"):
-                crud.create_user(
-                    db=db,
-                    username="user",
-                    password_hash=get_password_hash(user_pw),
-                    role="resident",
-                )
+        admin_pw = os.getenv("ADMIN_PASSWORD", "admin123")
+        user_pw = os.getenv("USER_PASSWORD", "user123")
+        if not crud.get_user_by_username(db, "admin"):
+            crud.create_user(
+                db=db,
+                username="admin",
+                password_hash=get_password_hash(admin_pw),
+                role="admin",
+            )
+        if not crud.get_user_by_username(db, "user"):
+            crud.create_user(
+                db=db,
+                username="user",
+                password_hash=get_password_hash(user_pw),
+                role="resident",
+            )
 
         demo_devices = [
             {
