@@ -4,7 +4,7 @@
 
 地震安链是一套面向燃气安全的近场地震应急防护系统。它通过部署在燃气管道入口的边缘智能终端，在 P 波到达后 3ms 内预测 S 波破坏强度并自动切断燃气，填补震中 20km 近场盲区的控制真空。同时，系统通过云边协同架构，为燃气公司提供设备管理、事件记录、远程复位、数据报表等能力，并为居民提供独立的安全看板。
 
-https://earthquake-safety-chain.vercel.app
+https://earthquake-safety-chain.vercel.app/login
 
 ## 系统架构
 
