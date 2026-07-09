@@ -180,7 +180,8 @@ import { ElLoading, ElMessage } from "element-plus";
 import { getDevices, getEvents, getStatistics, sendControl } from "@/api";
 
 const showDemoSwitch =
-  import.meta.env.DEV && import.meta.env.VITE_ENABLE_RESIDENT_DEMO_SWITCH !== "false";
+  import.meta.env.VITE_DEMO_MODE === "true" ||
+  (import.meta.env.DEV && import.meta.env.VITE_ENABLE_RESIDENT_DEMO_SWITCH !== "false");
 const router = useRouter();
 
 const deviceStatus = ref("normal");

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { isDemoMode } from "./demo";
 
 const request = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL || "/api",
@@ -21,7 +22,7 @@ request.interceptors.response.use(
   (response) => response,
   (error) => {
     const status = error?.response?.status;
-    if (status === 401) {
+    if (status === 401 && !isDemoMode()) {
       localStorage.removeItem("token");
       localStorage.removeItem("role");
       window.location.href = "/login";

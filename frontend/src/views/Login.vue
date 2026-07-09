@@ -196,7 +196,9 @@ const handleLogin = async () => {
           ? detail.map((d) => d.msg || JSON.stringify(d)).join("; ")
           : error?.message === "Network Error"
             ? "无法连接后端：请确认已启动 API（127.0.0.1:8000）后再试"
-            : "账号或密码错误，请检查后重试";
+            : import.meta.env.VITE_DEMO_MODE === "true"
+              ? "账号或密码错误，请使用演示账号 admin/admin123 或 user/user123"
+              : "账号或密码错误，请检查后重试";
     ElMessage.error(text);
   } finally {
     loading.value = false;
