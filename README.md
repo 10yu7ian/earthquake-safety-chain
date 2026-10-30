@@ -53,7 +53,7 @@ https://earthquake-safety-chain.vercel.app/login
 earthquake-safety-chain/
 ├── frontend/   # Vue3 前端项目
 ├── backend/    # FastAPI 后端项目
-├── mock/       # 树莓派模拟脚本
+├── mock/       # 树莓派脚本
 ├── .gitignore
 └── README.md
 ```
